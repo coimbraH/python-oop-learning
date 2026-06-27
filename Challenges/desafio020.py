@@ -17,16 +17,16 @@ class Gamer():
     def jogo(self):
         jogos = ''
         for n in sorted(self.fav):
-            jogos += f':video_game: {n} \n'
+            jogos += f'\n:video_game: {n} '
         return jogos
 
     def ficha(self):
         x = Panel(
         f'Nome real: {self.nome}\n'
-        f'Jogos favoritos:\n'
+        f'Jogos favoritos:'
         f'{self.jogo()}',
         width=50,
-        title=self.nick,
+        title=f'Jogador {self.nick}',
         )
         print(x)
 

@@ -13,9 +13,9 @@ class ControleRemoto:
         barra = ''
         for i in range(5):
             if i < self.volume:
-                barra += "[on blue] [/] "
+                barra += "[on blue] [/]"
             else:
-                barra += "[on white] [/] "
+                barra += "[on white] [/]"
         canal = [' 1 ',' 2 ',' 3 ',' 4 ',' 5 ']
         for i in range(5):
             if i+1 == self.canal:

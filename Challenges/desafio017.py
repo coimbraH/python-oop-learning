@@ -4,13 +4,13 @@ from rich.panel import Panel
 from rich import print
 
 
-class Produto():
+class Produto:
     def __init__(self, produto='', preco=0):
           self.produto = produto
           self.preco = preco
 
     def etiqueta(self):
-        x =  Panel(f"{self.produto:^35} \n {'-'*33}\n {self.preco:-^33,.2f}",
+        x =  Panel(f"{self.produto:^35} \n {'-'*33}\n {self.preco:.^33,.2f}",
                    title='Produto',
                    style='blue',
                    width=40,

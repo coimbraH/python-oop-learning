@@ -5,11 +5,11 @@ from rich import print
 
 class Caneta():
 
-    def __init__(self, cor=''):
+    def __init__(self, cor='azul'):
         self.cor = cor
-        self.tampa = ''
+        self.tampa = True
     def cores(self):
-        if self.cor == 'vermelho':
+        if self.cor == 'vermelho' or self.cor == 'vermelha':
             return '[red]'
         elif self.cor == 'azul':
             return '[blue]'
@@ -19,15 +19,17 @@ class Caneta():
             return 'Não temos essa cor de caneta. \n'
 
     def destampar(self):
-        self.tampa = 'ok'
+        self.tampa = False
+    def tampar(self):
+        self.tampa = True
 
     def escrever(self, texto =''):
-        if self.tampa == 'ok':
+        if self.tampa == False:
             print(f'{self.cores()} {texto}', end='')
         else:
-            print(' :prohibited: A caneta está tampada !', end='')
+            print(f' :prohibited: A {self.cores()}caneta[/] está tampada !', end='')
 
-    def quebrar_linha(self, n):
+    def quebrar_linha(self, n=1):
         print('\n'*n)
 
 
@@ -39,8 +41,11 @@ c1.destampar()
 c2.destampar()
 c3.destampar()
 
-c1.escrever('Olá, Mundo!')
+c1.escrever('Hi ! =)')
 c1.quebrar_linha(2)
-c2.escrever('Olá, Gafanhoto!')
-c3.escrever('Vamos exercitar!')
+c2.escrever('Eae !')
+c3.escrever('Tudo bonitinho!')
+c1.quebrar_linha()
+c3.tampar()
+c3.escrever('Teste de tampa')
 
