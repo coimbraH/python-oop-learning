@@ -8,16 +8,20 @@ class Personagem(ABC):
         self.vida = 0
         self.golpes = 0
 
-    def atacar(self,alvo,forca):
+    def atacar(self,alvo,forca = 300):
         self.alvo = alvo
         self.golpes = forca
         dano = randint(0, self.golpes)
         print(f'{self.nome}({self.vida}) atacou {self.alvo.nome}({self.alvo.vida}) com {choice(self.magias)} de força {dano}')
         self.receber_dano(dano)
-        print(f'O jogador {self.alvo.nome} recebeu {dano} de dano e agora sua vida é de {self.alvo.vida} ')
 
     def receber_dano(self,dano):
         self.alvo.vida -= dano
+        if self.alvo.vida <= 0:
+            self.alvo.vida = 0
+            print(f'A vida do jogador {self.alvo.nome} chegou a {self.alvo.vida} e ele morreu !')
+        else:
+            print(f'O jogador {self.alvo.nome} recebeu {dano} de dano e agora sua vida é de {self.alvo.vida} ')
 
     @abstractmethod
     def curar(self):

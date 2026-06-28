@@ -5,10 +5,10 @@ from rich.table import Table
 from rich.console import Console
 
 def main():
-    dist = 10
+    dist = 50
     viagens = [Caminhao(dist), Moto(dist), Drone(dist)]
     entrega = Caminhao(dist)
-    print(f'Frete de {type(entrega).__name__} em {dist}Km = {entrega.calc_frete()}')
+    print(f'Frete de {type(entrega).__name__} em {dist}Km custará {entrega.calc_frete()}')
 
     table = Table(title='Fretes')
     table.add_column('Distância', justify='center', style='blue')

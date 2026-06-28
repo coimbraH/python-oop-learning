@@ -14,10 +14,9 @@ class Poligono(ABC):
         pass
 
 class Quadrado(Poligono):
-    def __init__(self, lado=0):
-        super().__init__()
+    def __init__(self, lado=1):
+        super().__init__(4)
         self.lado = lado
-        self.qtd_lados = 4
 
     def perimetro(self):
         return self.qtd_lados * self.lado
@@ -26,10 +25,9 @@ class Quadrado(Poligono):
         return self.lado**2
 
 class Circulo(Poligono):
-    def __init__(self, raio=0):
-        super().__init__()
+    def __init__(self, raio=1):
+        super().__init__(1)
         self.raio = raio
-        self.qtd_lados = 1
 
     def perimetro(self):
         return 2*3.14159*self.raio
