@@ -1,4 +1,4 @@
-# OOP Python (Gustavo Guanabara)
+# OOP Python 
 
 Repo with my exercises, notes and experiments from the OOP course.
 
